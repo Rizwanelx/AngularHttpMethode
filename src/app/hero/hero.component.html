@@ -1,0 +1,23 @@
+
+<h2>My Heroes</h2>
+<div class="ulis">
+  <div class="listmeber">
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+</div>
+<div  class="listmeber">
+<div *ngIf="selectedHero" class='mydiv'>
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div class="ulis">
+  <button (click)="IncreaseVal(selectedHero)">Increase Count</button><br>
+  <div><span>count: </span>{{selectedHero.count}}</div>
+  <button (click)="DecreaseVal(selectedHero)">Decrease Count</button><br>
+</div>
+</div>
+</div>
+</div>
